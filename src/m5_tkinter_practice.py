@@ -74,7 +74,7 @@ def repeat(n,entry):
         print_contents(entry)
 
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # Done: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -98,7 +98,7 @@ def repeat(n,entry):
     ####################################################################
 
     # -------------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # Done: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
 
 
