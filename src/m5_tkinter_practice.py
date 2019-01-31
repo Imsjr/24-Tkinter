@@ -3,8 +3,8 @@ This project lets you try out Tkinter/Ttk and practice it!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jason Ims.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import tkinter
 from tkinter import ttk
@@ -13,34 +13,65 @@ from tkinter import ttk
 def main():
     """ Constructs a GUI with stuff on it. """
     # -------------------------------------------------------------------------
-    # TODO: 2. After reading and understanding the m1e module,
+    # Done: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # -------------------------------------------------------------------------
-
+    root = tkinter.Tk()
     # -------------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # Done: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
 
+    frame1 = ttk.Frame(root, padding=10)
+    frame1.grid()
+
+    go_forward_button = ttk.Button(frame1, text='Button')
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # Done: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # Done: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
-
+    go_forward_button['command'] = (lambda: print('Hello'))
+    go_forward_button.grid()
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # Done: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
+    entry = ttk.Entry(frame1)
+    entry.grid()
+    new_button = ttk.Button(frame1, text='New Button')
+
+    if entry.get() == 'ok':
+        new_button['command'] = (lambda: print ('Hello'))
+    else:
+        new_button['command'] = (lambda: print ('Goodbye'))
+    new_button.grid()
+
+    entry2 = ttk.Entry(frame1)
+    button3 = ttk.Button(frame1, text='Button 3')
+    entry2.grid()
+    button3.grid()
+    button3['command'] = (lambda: repeat(int(entry.get()),entry2))
+    root.mainloop()
+
+def print_contents(entry_box):
+    contents_of_entry_box = entry_box.get()
+    print(contents_of_entry_box)
+def repeat(n,entry):
+    for k in range (n):
+        print_contents(entry)
 
     # -------------------------------------------------------------------------
     # TODO: 7.
